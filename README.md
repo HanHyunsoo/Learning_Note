@@ -16,3 +16,4 @@
   * [숫자](Java/3_type/1_number/number.md)
   * [부울](Java/3_type/2_boolean/boolean.md)
   * [문자](Java/3_type/3_char/char.md)
+  * [문자열](Java/3_type/4_string/string.md)
