@@ -103,3 +103,18 @@ System.out.println(a.lastIndexOf("1")); // 결과값 5
 ```
 
 lastIndexOf는 indexOf 메소드와 똑같지만 문자열 오른쪽부터 값을 찾는다.
+
+### replaceAll
+
+replaceAll은 문자열 중 특정 문자를 다른 문자로 바꾸고 싶을 경우에 사용한다.
+
+```java
+String a = "Hello world";
+System.out.println(a.replaceAll("world", "java"));
+```
+
+결과값은 다음과 같다.
+
+```bash
+Hello java
+```
