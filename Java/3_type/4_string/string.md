@@ -118,3 +118,35 @@ System.out.println(a.replaceAll("world", "java"));
 ```bash
 Hello java
 ```
+
+### substring
+
+substring은 문자열 중 특정 부분을 뽑아낼 경우에 사용한다.
+
+```java
+String a = "Hello Java";
+System.out.println(a.substring(0, 4));
+```
+
+위 예시를 컴파일하면 답이 아래와 같이 나온다.
+
+```bash
+Hell
+```
+
+위처럼 substring(시작위치, 끝위치)와 같이 사용하면 문자열의 시작위치에서 끝위치까지의 문자를 뽑아내게 된다. 단 끝위치는 포함이 안된다는 점에 주의하자. (시작위치 <= a < 끝위치)
+
+substring(시작위치)로도 사용할 수 있다. 이런 식으로 사용하면 시작위치부터 문자열 끝까지 자르는 것이다.
+
+다음 예시를 보자.
+
+```java
+String b = "hizzma";
+System.out.println(a.substring(1));
+```
+
+출력
+
+```bash
+izzma
+```
