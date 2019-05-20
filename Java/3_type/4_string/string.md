@@ -150,3 +150,18 @@ System.out.println(a.substring(1));
 ```bash
 izzma
 ```
+
+### toUpperCase
+
+toUpperCase는 문자열을 모두 대문자로 변경하고자 할 대 사용한다. (모두 소문자로 변경할 때는 toLowerCase)
+
+```java
+String a = "Hello";
+System.out.println(a.toUpperCase());
+```
+
+출력은 다음과 같다.
+
+```bash
+HELLO
+```
