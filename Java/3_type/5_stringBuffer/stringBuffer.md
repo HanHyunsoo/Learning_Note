@@ -53,3 +53,26 @@ String 자료형은 한번 값이 생성되면 그 값을 변경할 수가 없�
 그렇다면 무조건 StringBuffer를 사용하는 것이 좋을까?
 
 그건 상황에 따라 다르다. StringBuffer 자료형은 String 자료형보다 무거운 편에 속한다. new StringBuffer() 로 객체를 생성하는 것은 일반 String을 사용하는 것보다 메모리 사용량도 많고 속도도 느리다. 따라서 문자열 추가나 변경등의 작업이 많을 경우에는 StringBuffer를, 문자열 변경 작업이 거의 없는 경우에는 그냥 String을 사용하는 것이 유리하다.
+
+## insert
+
+insert 메소드는 특정 위치에 원하는 문자열을 삽입할 수 있다.
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("my name is hanhyunsoo");
+        sb.insert(0, "hello ");
+        System.out.println(sb.toString());
+    }
+}
+```
+
+출력
+
+```bash
+hello my name is hanhyunsoo
+```
+
+위 예를 0번째 위치에 "hello "라는 문자열을 삽인하는 방법을 보여준다.
