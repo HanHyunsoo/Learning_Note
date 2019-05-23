@@ -52,7 +52,7 @@ String 자료형은 한번 값이 생성되면 그 값을 변경할 수가 없�
 
 그렇다면 무조건 StringBuffer를 사용하는 것이 좋을까?
 
-그건 상황에 따라 다르다. StringBuffer 자료형은 String 자료형보다 무거운 편에 속한다. new StringBuffer() 로 객체를 생성하는 것은 일반 String을 사용하는 것보다 메모리 사용량도 많고 속도도 느리다. 따라서 문자열 추가나 변경등의 작업이 많을 경우에는 StringBuffer를, 문자열 변경 작업이 거의 없는 경우에는 그냥 String을 사용하는 것이 유리하다.
+그건 상황에 따라 다르다. StringBuffer 자료형은 String 자료형보다 무거운 편에 속한다. `new StringBuffer()` 로 객체를 생성하는 것은 일반 String을 사용하는 것보다 메모리 사용량도 많고 속도도 느리다. 따라서 문자열 추가나 변경등의 작업이 많을 경우에는 StringBuffer를, 문자열 변경 작업이 거의 없는 경우에는 그냥 String을 사용하는 것이 유리하다.
 
 ## insert
 
@@ -75,4 +75,30 @@ public class Test {
 hello my name is hanhyunsoo
 ```
 
-위 예를 0번째 위치에 "hello "라는 문자열을 삽인하는 방법을 보여준다.
+위 예를 0번째 위치에 "hello "라는 문자열을 삽입하는 방법을 보여준다.
+
+## substring
+
+substring 메소드는 String 자료형의 substring 메소드와 사용법이 동일하다.
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("Hello world!");
+        System.out.println(sb.substring(0, 4));
+        System.out.println(sb.substring(6));
+    }
+}
+```
+
+출력값
+
+```bash
+Hell
+world!
+```
+
+substring(start, end)와 같이 사용하면 start 인덱스 부터 end 인덱스 전까지(end - 1) StringBuffer 객체의 시작위치에서 끝위치 전까지 문자를 뽑아낸다.
+
+substring(start)와 같이 사용하면 시작위치부터 문자열 끝까지 뽑아진다.
