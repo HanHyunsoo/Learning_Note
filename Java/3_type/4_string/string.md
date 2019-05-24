@@ -165,3 +165,22 @@ System.out.println(a.toUpperCase());
 ```bash
 HELLO
 ```
+
+### split
+
+자바에서 문자열을 어떤 문자 또는 문자열 기준으로 각각 나눠서 따로 배열에 저장하고 싶으면 split 함수를 쓰면된다.
+
+배열 부분은 [여기](Java/3_type/6_array/array.md)를 참조
+
+```java
+String str = "hi aa bb";
+String[] test1 = str.split(" ");
+String[] test1 = str.split(" ", 2);
+```
+
+위 코드와 같이 띄어쓰기 기준으로 나눠서 test1 배열에 값들을 저장하면 `hi, aa, bb` 로 각각 나눠질 것이다.
+
+아래 test2는 test1과 다르게 뒤에 매개변수 int형 숫자를 추가 했는데
+이는 배열의 값을 만들 최대값을 정하는 것이다.
+
+test2의 값은 `h1, aa bb` 가 된다. 2개로 설정해서 배열의 값이 2개가 최대가 된다.
