@@ -116,3 +116,26 @@ if (money >= 3000 || hasCard) {
 ```
 
 money는 2000이지만 hasCard가 true이기 때문에 `money >= 3000 || hasCard`라는 조건문이 참이 되어 if문 다음의 문장이 수행된다.
+
+## contains
+
+List 자료형에는 해당아이템이 있는지 조사하는 contains라는 메소드가 있다. contains메소드는 조건문에 많이 활용되는데 어떻게 활용이 되는지 살펴보도록 하자.
+
+다음의 경우를 예제에 적용시켜 보자.
+
+`만약 주머니에 돈이 있으면 택시를 타고, 없으면 걸어가라`
+
+```java
+ArrayList<String> pocket = new ArrayList<String>();
+pocket.add("paper");
+pocket.add("handphone");
+pocket.add("money");
+
+if (pocket.contains("money")) {
+    System.out.println("택시를 타고 가라");
+} else {
+    System.out.println("걸어가라");
+}
+```
+
+pocket 리스트에 안에 'money'가 있으므로 pocket.contains("money")는 참이 되어서 if문 다음의 문장이 수행되었다.
