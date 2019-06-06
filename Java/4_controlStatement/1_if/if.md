@@ -139,3 +139,74 @@ if (pocket.contains("money")) {
 ```
 
 pocket 리스트에 안에 'money'가 있으므로 pocket.contains("money")는 참이 되어서 if문 다음의 문장이 수행되었다.
+
+## else if (다중 조건 판단)
+
+if와 else만을 가지고서는 다양한 조건 판단을 하기가 어렵다. 다음과 같은 예만 하더라도 if와 else만으로는 조건 판단에 어려움을 겪게 된다.
+
+`지갑에 돈이 있으면 택시를 타고, 지갑엔 돈이 없지만 카드가 있으면 택시를 타고, 돈도 없고 카드도 없으면 걸어가라`
+
+위의 문장을 보면 조건을 판단하는 부분이 두 군데가 있다. 먼저 지갑에 돈이 있는지를 판단해야 하고 지갑에 돈이 없으면 다시 카드가 있는지를 판단한다.
+
+if와 else만으로 위의 문장을 표현 하려면 다음과 같이 할 수 있을 것이다.
+
+```java
+boolean hasCard = true;
+ArrayList<String> pocket = new ArrayList<String>();
+pocket.add("paper");
+pocket.add("handphone");
+
+if (pocket.contains("money")) {
+    System.out.println("택시를 타고 가라");
+} else {
+    if (hasCard) {
+        System.out.println("택시를 타고 가라");
+    } else {
+        System.out.println("걸어가라");
+    }
+}
+```
+
+언뜻 보기에도 이해하기가 쉽지 않고 산만한 느낌이 든다. 위와 같은 점을 보완하기 위해서 자바는 다중 조건 판단을 가능하게 하는 `else if`라는 것을 사용한다.
+
+위의 예를 `else if`를 이용하면 다음과 같이 할 수 있다.
+
+```java
+boolean hasCard = true;
+ArrayList<String> pocket = new ArrayList<String>();
+pocket.add("paper");
+pocket.add("handphone");
+
+if (pocket.contains("money")) {
+    System.out.println("택시를 타고 가라");
+} else if(hasCard) {
+    System.out.println("택시를 타고 가라");
+} else {
+    System.out.println("걸어가라");
+}
+```
+
+즉, `else if`는 이전 조건문이 거짓일 때 수행되게 된다. if, else if, else의 기본 구조는 다음과 같다.
+
+```java
+if (조건문) {
+    <수행할 문장1>
+    <수행할 문장2>
+    ...
+} else if (조건문) {
+    <수행할 문장1>
+    <수행할 문장2>
+    ...
+} else if (조건문) {
+    <수행할 문장1>
+    <수행할 문장2>
+    ...
+...
+} else {
+   <수행할 문장1>
+   <수행할 문장2>
+   ...
+}
+```
+
+위에서 보듯이 `else if`는 개수에 제한 없이 사용할 수 있다.
