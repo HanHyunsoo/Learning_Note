@@ -19,3 +19,5 @@
   * [문자열(String)](Java/3_type/4_string/string.md)
   * [StringBuffer](Java/3_type/5_stringBuffer/stringBuffer.md)
   * [배열(Array)](Java/3_type/6_array/array.md)
+  * [if 문](Java/4_controlStatement/1_if/if.md)
+  * [switch/case 문](Java/4_controlStatement/2_switch_case/switch_case.md)
