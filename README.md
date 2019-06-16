@@ -24,3 +24,5 @@
   * [switch/case 문](Java/4_controlStatement/2_switch_case/switch_case.md)
   * [while 문](Java/4_controlStatement/3_while/while.md)
   * [for 문](Java/4_controlStatement/4_for/for.md)
+  * [for each 문](Java/4_controlStatement/5_for_each/for_each.md)
+  
