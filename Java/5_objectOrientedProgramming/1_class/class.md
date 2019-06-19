@@ -85,3 +85,37 @@ null
 ```
 
 cat.name을 출력한 결과값으로 null이 나왔다. null이라는 것은 값이 할당되어 있지 않은 상태를 말한다. 객체 변수로 name 을 선언했지만 아무런 값도 대입을 하지 않았기 때문에 null 이라는 값이 출력된 것이다.
+
+## 메소드
+
+자, 이제 객체변수에 접근하는 방법과 현재 값이 할당되어 있지 않은 상태에 대해서 알게 되었다. 이제 객체 변수에 값을 대입하는 것에 대해서 알아보도록 하자.
+
+객체 변수에 값을 대입하는 방법에는 여러가지가 있을 수 있지만 여기서는 가장 보편적인 방법인 메소드를 이용하는 방법에 대해서 알아보자.
+
+클래스에는 객체 변수와 더불어 **메소드(Method)** 라는 것이 있다. 메소드는 클래스 내에 구현된 함수를 의미하는데 보통 함수라고 말하지 않고 메소드라고 말한다.
+
+이제 메소드를 이용하여 Animal 클래스의 객체 변수인 name 에 값을 대입해 보도록 하자.
+
+아래와 같이 setName 메소드를 추가 해 보자.
+
+```java
+public class Animal {
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Animal cat = new Animal();
+        System.out.println(cat.name);
+    }
+}
+```
+
+Animal클래스에 추가된 setName메소드는 다음과 같은 형태의 메소드이다.
+
+* 입력: String name
+* 출력: void (리턴값 없음)
+
+즉, 입력으로 name이라는 문자열을 받고 출력은 없는 형태의 메소드이다.
