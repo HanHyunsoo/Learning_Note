@@ -119,3 +119,75 @@ Animal클래스에 추가된 setName메소드는 다음과 같은 형태의 메�
 * 출력: void (리턴값 없음)
 
 즉, 입력으로 name이라는 문자열을 받고 출력은 없는 형태의 메소드이다.
+
+이번에는 setName 메소드의 내부를 살펴보자. setName 메소드는 다음의 문장을 가지고 있다.
+
+```java
+this.name = name;
+```
+
+여기서 `this`에 대해서 이해하는 것은 꽤 중요하다. 이 문장에 대한 설명은 잠시 보류하고 일단은 우선 이 메소드를 호출 하는 방법에 대해서 먼저 알아보자.
+
+객체 변수에 접근하기 위해서 `객체.변수` 와 같이 도트연산자(.)로 접근할 수 있었던 것과 마찬가지로 객체가 메소드를 호출하기 위해서는 `객체.메소드` 로 호출할 수 있다.
+
+즉, 우리가 만든 setName메소드를 호출하려면 다음과 같이 호출해야 한다.
+
+```java
+cat.setName("boby");
+```
+
+여기서 setName메소드의 입력으로 문자열을 전달해야 한다. 왜냐하면 setName메소드는 입력항목으로 문자열을 필요로 하기 때문이다.
+
+setName메소드를 호출할 수 있도록 main메소드를 다음과 같이 수정해 보자.
+
+```java
+public static void main(String[] args) {
+    Animal cat = new Animal();
+    cat.setName("boby");  // 메소드 호출
+    System.out.println(cat.name);
+}
+```
+
+이렇게 수정하고 다시 실행하면 이제 setName메소드가 호출 될 것이다.
+
+자, 이제 아까 설명을 잠시 보류한 setName메소드의 다음 문장을 다시 보도록 하자.
+
+```java
+this.name = name;
+```
+
+main메소드에서 `cat.setName("boby")` 와 같이 "boby"라는 입력값으로 setName 메소드를 호출했기 때문에 setName함수의 입력항목 name에는 "boby"라는 문자열이 전달될 것이다.
+
+따라서 setName 메소드의 `this.name = name;` 문장은 다음과 같이 해석되어 질 것이다.
+
+```java
+this.name = "boby";
+```
+
+setName 메소드 내부에 사용된 `this`는 Animal 클래스에 의해서 생성된 객체를 지칭한다. 만약 `Animal cat = new Animal()` 과 같이 cat이라는 객체를 만들고 `cat.setName("boby")` 와 같이 cat객체에 의해 setName 메소드를 호출하면 setName 메소드 내부에 선언된 this는 바로 cat 객체를 지칭하게 된다.
+
+만약 `Animal dog = new Animal()`로 dog 객체를 만든 후 `dog.setName("happy")` 와 같이 호출한다면 setName 메소드 내부에 선언된 this는 바로 dog 객체를 가르키게 된다.
+
+따라서 `this.name = "boby";` 문장은 다시 다음과 같이 해석되어 진다.
+
+```java
+cat.name = "boby";
+```
+
+`cat.name` 과 같이 하면 객체 변수에 접근할 수 있음을 우리는 알고 있다. 객체 변수에 값을 대입하는 방법은 아주 쉽다. 그냥 변수에 값을 대입하는 것과 마찬가지 방법이다.
+
+```java
+객체.객체변수 = 값
+```
+
+따라서 `cat.name = "boby"`라는 문장은 객체 cat의 객체변수 name에 "boby"라는 값을 대입하게 된다.
+
+Animal 클래스를 다시 실행 해 보자.
+
+다음과 같은 문자열이 출력되는 것을 확인할 수 있을 것이다.
+
+```bash
+boby
+```
+
+cat.name은 이제 null이 아니라 "boby"임을 확인할 수 있다.
