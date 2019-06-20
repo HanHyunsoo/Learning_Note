@@ -191,3 +191,58 @@ boby
 ```
 
 cat.name은 이제 null이 아니라 "boby"임을 확인할 수 있다.
+
+## 객체 변수는 공유되지 않는다
+
+이번에는 main메소드를 다음과 같이 변경 해 보자.
+
+```java
+public static void main(String[] args) {
+    Animal cat = new Animal();
+    cat.setName("boby");
+
+    Animal dog = new Animal();
+    dog.setName("happy");
+}
+```
+
+cat객체에는 "boby"라는 이름을 대입하고 dog객체에는 "happy"라는 이름을 대입하도록 했다.
+
+이럴경우 setName메소드에 의해 다음과 같은 문장이 두번 실행될 것이다.
+
+```java
+cat.name = "boby";
+dog.name = "happy";
+```
+
+이럴 경우 `dog.name = "happy"` 라는 문장이 나중에 수행되므로 cat.name의 값도 "happy"라는 값으로 변경되지는 않을까?
+
+Animal 클래스의 객체변수 name이 cat객체와 dog객체간 서로 공유되는 변수라면 아마도 그럴것이다.
+
+다음과 같이 확인해 보자.
+
+```java
+public static void main(String[] args) {
+    Animal cat = new Animal();
+    cat.setName("boby");
+
+    Animal dog = new Animal();
+    dog.setName("happy");
+
+    System.out.println(cat.name);
+    System.out.println(dog.name);
+}
+```
+
+결과는 다음과 같이 출력되었다.
+
+```bash
+boby
+happy
+```
+
+결과를 보면 name 객체 변수는 공유되지 않는다는 것을 확인할 수 있다.
+
+이 부분은 정말 너무 중요해서 꼭 잘 알아둬야 한다. 클래스에서 가장 중요한 부분은 그 뭐라해도 이 객체 변수의 값이 독립적으로 유지된다는 점이다. 사실 이 점이 바로 클래스 존재의 이유이기도 하다. 객체 지향적(Object Oriented)이라는 말의 의미도 곱씹어 보면 결국 이 객체 변수의 값이 독립적으로 유지되기 때문에 가능한 것이다.
+
+(참고. 객체 변수의 값은 공유되지 않지만 나중에 알게될 static을 이용하게 되면 객체 변수를 공유하도록 만들 수도 있다.)
