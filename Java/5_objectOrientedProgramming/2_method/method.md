@@ -14,7 +14,7 @@
 
 ```java
 public int sum(int a, int b) {
-    return a+b;
+    return a + b;
 }
 ```
 
@@ -27,7 +27,7 @@ public int sum(int a, int b) {
 ```java
 public class Test {
     public int sum(int a, int b) {
-        return a+b;
+        return a + b;
     }
 
     public static void main(String[] args) {
@@ -78,7 +78,7 @@ public 리턴자료형 메소드명(입력자료형1 입력변수1, 입력자료
 
 ```java
 public int sum(int a, int b) {
-    return a+b;
+    return a + b;
 }
 ```
 
@@ -149,7 +149,7 @@ Hi
 
 ```java
 public void sum(int a, int b) {
-    System.out.println(a+"과 "+b+"의 합은 "+(a+b)+"입니다.");
+    System.out.println(a + "과 "+ b + "의 합은 " + (a + b) + "입니다.");
 }
 ```
 
@@ -208,3 +208,20 @@ myTest.say();
 ```java
 객체.메소드명()
 ```
+
+## return의 또 다른 쓰임새
+
+특별한 경우에 메소드를 빠져나가기를 원할 때 return만 단독으로 써서 메소드를 즉시 빠져나갈 수 있다. 다음 예를 보자.
+
+```java
+public void say_nick(String nick) {
+    if ("fool".equals(nick)) {
+        return;
+    }
+    System.out.println("나의 별명은 "+ nick +" 입니다.");
+}
+```
+
+위의 메소드는 입력값으로 nick이란 변수를 받아서 문자열을 출력하는 메소드이다. 이 메소드 역시 리턴값은 없다. 문자열을 출력한다는 것과 리턴값이 있다는 것은 전혀 다른 말이다. 혼동하지 말도록 하자, 메소드의 리턴값은 오로지 return문에 의해서만 생성된다. 이 메소드는 입력값으로 'fool'이라는 값이 들어오면 문자열을 출력하지 않고 메소드를 즉시 빠져나간다. 이렇게 메소드 수행 시 특정 조건에 따라 메소드를 즉시 빠져나가고 싶은 경우 return 문을 이용하면 된다. 이 방법은 실제 프로그래밍에서 자주 쓰인다.
+
+(참고. return 문만을 써서 메소드를 빠져나가는 이 방법은 리턴자료형이 void형인 메소드에만 해당된다. 리턴자료형이 명시되어 있는 메소드에서 return 문만 작성하면 컴파일 시 오류가 발생한다.)
