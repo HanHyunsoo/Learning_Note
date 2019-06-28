@@ -48,7 +48,7 @@ public class Dog extends Animal {
 ```java
 public class Dog extends Animal {
     public void sleep() {
-        System.out.println(this.name+" zzz");
+        System.out.println(this.name + " zzz");
     }
 
     public static void main(String[] args) {
@@ -120,3 +120,58 @@ public class Animal extends Object {
 Object animal = new Animal();
 Object dog = new Dog();
 ```
+
+## 메소드 오버라이딩 (Method overriding)
+
+이번에는 Dog 클래스를 좀 더 구체화 시키는 HouseDog 클래스를 만들어 보자. HouseDog 클래스는 Dog 클래스를 상속하여 다음과 같이 만들 수 있다.
+
+***HouseDog.java***
+
+```java
+public class HouseDog extends Dog {
+    public static void main(String[] args) {
+        HouseDog houseDog = new HouseDog();
+        houseDog.setName("happy");
+        houseDog.sleep();
+    }
+}
+```
+
+HouseDog 클래스를 실행 해 보면 sleep 메소드가 호출되어 다음과 같은 결과가 출력될 것이다.
+
+```bash
+happy zzz
+```
+
+그런데 HouseDog, 즉 집에서 키우는 개들은 잠을 집에서만 잔다고 한다. HouseDog 클래스로 만들어진 객체들은 sleep 메소드 호출 시 "happy zzz" 가 아닌 "happy zzz in house" 를 출력해야 한다고 가정 해 보자.
+
+이렇게 하려면 어떻게 해야 할까?
+
+다음과 같이 HouseDog 클래스를 수정해 보자.
+
+```java
+public class HouseDog extends Dog {
+    @Override
+    public void sleep() {
+        System.out.println(this.name + " zzz in house");
+    }
+
+    public static void main(String[] args) {
+        HouseDog houseDog = new HouseDog();
+        houseDog.setName("happy");
+        houseDog.sleep();
+    }
+}
+```
+
+> 위 코드를 추가적으로 설명하자면 sleep 함수 위에 `@Override`가 있는데 이는 **어노테이션**이라고 부른다. `@` 표시 즉 어노테이션은 클래스 또는 메소드 또는 변수 앞에 붙을 수 있고 이 어노테이션으로 데이터 유효성 검사 등을 쉽게 알 수 있고 이와 관련된 코드가 깔끔해 지게 된다. `@Override`같은 경우는 위 sleep 함수를 오버라이드 했다고 명시를 해주는 것이고 인자값 또는 반환값을 다르게하거나 부모에 없는 메소드 위에 `@Override`를 명시하면 오류가 나게 된다. `@Override`이외에 다른 어노테이션들도 있으며 각자 다양한 목적이 있지만 **메타 데이터**의 비중이 가장 크다.
+
+Dog 클래스에 있는 sleep 메소드를 HouseDog에 내용만 조금 변경하여 구현하고 실행 해 보았더니 다음처럼 원하던 결과값을 얻을 수 있었다.
+
+```bash
+happy zzz in house
+```
+
+HouseDog 클래스에 Dog 클래스와 동일한 형태(입출력이 동일)의 sleep 메소드를 구현하면 HouseDog 클래스의 sleep 메소드가 Dog 클래스의 sleep 메소드보다 더 높은 우선순위를 갖게 되어 HouseDog 클래스의 sleep 메소드가 호출되게 된다.
+
+이렇게 부모클래스의 메소드를 자식클래스가 동일한 형태로 또다시 구현하는 행위를 메소드 오버라이딩(Method Overriding)이라고 한다. (※ 메소드 덮어쓰기)
