@@ -30,3 +30,4 @@
   * [메소드(method)](Java/5_objectOrientedProgramming/2_method/method.md)
   * [Call by value](Java/5_objectOrientedProgramming/3_call_by_value/call_by_value.md)
   * [상속](Java/5_objectOrientedProgramming/4_inheritance/inheritance.md)
+  * [생성자](Java/5_objectOrientedProgramming/5_constructor/constructor.md)
