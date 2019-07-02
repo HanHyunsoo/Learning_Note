@@ -119,3 +119,46 @@ public Person {
 만약 클래스에 생성자가 하나도 없다면 컴파일러는 자동으로 위와같은 디폴트 생성자를 추가한다. 하지만 사용자가 작성한 생성자가 하나라도 구현되어 있다면 컴파일러는 디폴트 생성자를 추가하지 않는다.
 
 ※ 이러한 이유로 위에서 살펴본 Person 클래스에 name을 입력으로 받는 생성자를 만든 후에 new Person() 는 사용할 수 없게 되는 것이다. (Person클래스에 이미 생성자를 만들었기 때문에 컴파일러는 디폴트 생성자를 자동으로 추가하지 않는다.)
+
+## 생성자 오버로딩
+
+하나의 클래스에 여러개의 입력항목이 다른 생성자를 만들 수 있다.
+
+즉, 다음과 같은 것이 가능하다.
+
+```java
+class Person {
+    String name;
+
+    public Person() {
+        this.name = "없음";
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Person unknown = new Person();
+        Person person = new Person("HanHyunSoo");
+        System.out.println(unknown.name);
+        System.out.println(person.name);
+    }
+}
+```
+
+위 Person 클래스는 두 개의 생성자가 구현되어 있다. 하나는 String 자료형을 입력으로 받는 생성자이고 다른 하나는 입력을 받지 않는 생성자이다. 두 생성자의 차이는 입력 항목이다. 이렇게 입력 항목이 다른 생성자를 여러 개 만들 수 있는데 이런 것을 생성자 오버로딩(Overloading) 이라고 말한다. (※ 메소드 오버로딩과 마찬가지 개념이다.)
+
+이제 Person 객체는 다음과 같이 두 가지 방법으로 생성이 가능하다.
+
+```java
+Person unknown = new Person();
+Person person = new Person("HanHyunSoo");
+```
+
+main메소드를 실행하면 다음과 같은 결과가 출력될 것이다.
+
+```bash
+없음
+HanHyunSoo
+```
