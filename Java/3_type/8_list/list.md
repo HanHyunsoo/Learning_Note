@@ -33,4 +33,4 @@ pitches.add(0, "133");    // 첫번째 위치에 133 삽입.
 pitches.add(1, "133");
 ```
 
-※ 자바는 J2SE 5.0 버전 이후부터 `ArrayList<String> pitches = new ArrayList<String>();` 이런식으로 객체를 포함하는 자료형도 어떤 객체를 포함하는지에 대해서 명확하게 표현하는것을 권고하고 있다. 이클립스에서 위와 같이 코딩하면 명확한 타입을 명시하라는 warning이 표시될 것이다. 이 부분에 대한 자세한 내용은 이 [링크](../7_generics/generics.md)를 참조
+※ 자바는 J2SE 5.0 버전 이후부터 `ArrayList<String> pitches = new ArrayList<String>();` 이런식으로 객체를 포함하는 자료형도 어떤 객체를 포함하는지에 대해서 명확하게 표현하는것을 권고하고 있다. 이 부분에 대한 자세한 내용은 이 [링크](../7_generics/generics.md)를 참조
