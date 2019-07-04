@@ -20,6 +20,7 @@
   * [StringBuffer](Java/3_type/5_stringBuffer/stringBuffer.md)
   * [배열(Array)](Java/3_type/6_array/array.md)
   * [제네릭스(Generics)](Java/3_type/7_generics/generics.md)
+  * [리스트(List)](Java/3_type/8_list/list.md)
 * 제어문
   * [if 문](Java/4_controlStatement/1_if/if.md)
   * [switch/case 문](Java/4_controlStatement/2_switch_case/switch_case.md)
